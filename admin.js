@@ -1,3 +1,5 @@
+// FINAL ADMIN JAVASCRIPT - PLEASE REPLACE YOUR ENTIRE FILE WITH THIS
+
 //
 // ===================================
 //  ADMIN APP LOGIC
@@ -61,9 +63,6 @@ registerBtn.addEventListener('click', () => {
         return alert('Please fill all fields.');
     }
 
-    // This requires a special setup in Firebase to work from the client.
-    // For now, we'll store the user details, but account creation would need a Cloud Function for security.
-    // For this project, we'll create the user directly.
     auth.createUserWithEmailAndPassword(email, password)
         .then(userCredential => {
             const userId = userCredential.user.uid;
@@ -104,6 +103,10 @@ function listenForAttendance() {
         .orderBy('timestamp', 'desc')
         .onSnapshot(snapshot => {
             attendanceList.innerHTML = ''; // Clear list
+            if (snapshot.empty) {
+                attendanceList.innerHTML = '<li>No attendance marked today.</li>';
+                return;
+            }
             snapshot.forEach(doc => {
                 const record = doc.data();
                 const time = record.timestamp.toDate().toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
