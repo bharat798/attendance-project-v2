@@ -1,1 +1,41 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Employee Attendance</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="login-screen" class="screen active">
+            <div class="app-card">
+                <h1 class="app-title">Employee Login</h1>
+                <input type="email" id="login-email" placeholder="Your Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-btn">Login</button>
+            </div>
+        </div>
 
+        <div id="dashboard-screen" class="screen">
+            <div class="app-card">
+                <h1 id="welcome-message">Welcome!</h1>
+                <p>Register your passkey once, then use it to mark your attendance daily.</p>
+                <hr>
+                <button id="register-passkey-btn">Register Passkey</button>
+                <hr>
+                <button id="mark-attendance-btn">Mark My Attendance</button>
+                <hr>
+                <button id="logout-btn">Logout</button>
+            </div>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/@simplewebauthn/browser/dist/bundle/index.umd.min.js"></script>
+    <script src="employee.js"></script>
+</body>
+</html>
