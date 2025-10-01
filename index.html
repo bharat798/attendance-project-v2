@@ -1,1 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Admin Panel</title>
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="app-container">
+        <div id="login-screen" class="screen active">
+            <div class="app-card">
+                <h1 class="app-title admin">Admin Panel</h1>
+                <input type="email" id="login-email" placeholder="Admin Email">
+                <input type="password" id="login-password" placeholder="Password">
+                <button id="login-btn" class="admin-btn">Login</button>
+            </div>
+        </div>
 
+        <div id="dashboard-screen" class="screen">
+            <div class="app-card">
+                <h2>Register New Employee</h2>
+                <input type="text" id="reg-name" placeholder="Employee Name">
+                <input type="email" id="reg-email" placeholder="Employee Email">
+                <input type="password" id="reg-password" placeholder="Temporary Password">
+                <button id="register-btn">Register Employee</button>
+            </div>
+
+            <div class="app-card">
+                <h2>Registered Employees</h2>
+                <ul id="employee-list"></ul>
+            </div>
+            
+            <div class="app-card">
+                <h2>Today's Attendance</h2>
+                <ul id="attendance-list"></ul>
+            </div>
+
+            <button id="logout-btn" class="admin-btn">Logout</button>
+        </div>
+    </div>
+
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-app-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-auth-compat.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/9.6.1/firebase-firestore-compat.js"></script>
+    <script src="admin.js"></script>
+</body>
+</html>
