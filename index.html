@@ -12,9 +12,24 @@
         <div id="login-screen" class="screen active">
             <div class="app-card">
                 <h1 class="app-title admin">Admin Panel</h1>
-                <input type="email" id="login-email" placeholder="Admin Email">
-                <input type="password" id="login-password" placeholder="Password">
-                <button id="login-btn" class="admin-btn">Login</button>
+                <div id="login-view">
+                    <input type="email" id="login-email" placeholder="Admin Email" value="admin@company.com">
+                    <input type="password" id="login-password" placeholder="Password">
+                    <button id="login-btn" class="admin-btn">Login</button>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        <a href="#" id="show-admin-reg-link">Setup First Admin Account</a>
+                    </p>
+                </div>
+                
+                <div id="admin-reg-view" style="display: none;">
+                    <h2>Setup Admin Account</h2>
+                    <p>This is a one-time setup for <strong>admin@company.com</strong>.</p>
+                    <input type="password" id="admin-reg-password" placeholder="Choose a Secure Password">
+                    <button id="admin-reg-btn" class="admin-btn">Create Admin</button>
+                    <p style="text-align: center; margin-top: 1rem;">
+                        <a href="#" id="show-admin-login-link">Back to Login</a>
+                    </p>
+                </div>
             </div>
         </div>
 
